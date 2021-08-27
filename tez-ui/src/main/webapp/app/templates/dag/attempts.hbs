@@ -17,21 +17,7 @@
 }}
 
 {{#if loaded}}
-  {{em-table
-    columns=visibleColumns
-    rows=model
-
-    headerComponentNames=headerComponentNames
-
-    definition=definition
-
-    searchAction="searchChanged"
-    sortAction="sortChanged"
-    rowAction="rowCountChanged"
-    pageAction="pageChanged"
-
-    rowsChanged="rowsChanged"
-  }}
+  <EmTable @columns={{visibleColumns}} @rows={{model}} @headerComponentNames={{headerComponentNames}} @definition={{definition}} @searchAction="searchChanged" @sortAction="sortChanged" @rowCountChanged={{this.rowCountChanged}} @rowsChanged={{this.rowsChanged}} @openColumnSelector={{this.openColumnSelector}}/>
 {{else}}
-  {{partial "loading"}}
+  <Loading/>
 {{/if}}

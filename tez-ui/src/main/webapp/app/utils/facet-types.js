@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import Ember from 'ember';
+import { get } from '@ember/object';
 
 var facetTypes = {
   VALUES: {
@@ -26,7 +26,7 @@ var facetTypes = {
       var values, clauses = [];
 
       if(facetConditions) {
-        if(Ember.get(facetConditions, "in.length")) {
+        if(get(facetConditions, "in.length")) {
           values = facetConditions.in.map(function (value) {
             value = value.replace(/'/g, "''");
             return `'${value}'`;
@@ -34,7 +34,7 @@ var facetTypes = {
           clauses.push(`${column.id} IN (${values})`);
         }
 
-        if(Ember.get(facetConditions, "notIn.length")) {
+        if(get(facetConditions, "notIn.length")) {
           values = facetConditions.notIn.map(function (value) {
             value = value.replace(/'/g, "''");
             return `'${value}'`;
@@ -75,7 +75,7 @@ var facetTypes = {
     },
 
     normaliseConditions: function (conditions, data) {
-      if(Ember.get(conditions, "in.length") < data.length) {
+      if(get(conditions, "in.length") < data.length) {
         return conditions;
       }
     }

@@ -17,18 +17,7 @@
 }}
 
 {{#if loaded}}
-  {{em-table
-  columns=columns
-  rows=counters
-
-  rowCount=countersCount
-  definition=definition
-
-  enablePagination=false
-
-  searchAction="searchChanged"
-  sortAction="sortChanged"
-  }}
+  <EmTable @columns={{columns}} @rows={{counters}} @rowCount={{countersCount}} @definition={{definition}} @enablePagination={{false}} @searchAction="searchChanged" @sortAction="sortChanged" />
 {{else}}
-  {{partial "loading"}}
+  <Loading/>
 {{/if}}

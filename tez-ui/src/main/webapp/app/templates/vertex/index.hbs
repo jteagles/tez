@@ -38,19 +38,19 @@
       </tr>
       <tr>
         <td>Status</td>
-        <td>{{em-table-status-cell content=model.finalStatus}}</td>
+        <td><EmTableStatusCell @content={{model.finalStatus}} /></td>
       </tr>
       <tr>
         <td>Progress</td>
-        <td>{{em-table-progress-cell content=model.progress}}</td>
+        <td><EmTableProgressCell @content={{model.progress}} /></td>
       </tr>
       <tr>
         <td>Start Time</td>
-        <td>{{date-formatter content=model.startTime}}</td>
+        <td><DateFormatter @content={{model.startTime}} /></td>
       </tr>
       <tr>
         <td>End Time</td>
-        <td>{{date-formatter content=model.endTime}}</td>
+        <td><DateFormatter @content={{model.endTime}} /></td>
       </tr>
       <tr>
         <td>Duration</td>
@@ -68,43 +68,43 @@
     <tbody>
       <tr>
         <td>Total Tasks</td>
-        <td>{{stats-link value=model.totalTasks routeName="vertex.tasks"}}</td>
+        <td><StatsLink @value={{model.totalTasks}} @routeName="vertex.tasks" /></td>
       </tr>
       <tr>
         <td>Succeeded Tasks</td>
-        <td>{{stats-link value=model.succeededTasks routeName="vertex.tasks" statsType="SUCCEEDED"}}</td>
+        <td><StatsLink @value={{model.succeededTasks}} @routeName="vertex.tasks" @statsType="SUCCEEDED" /></td>
       </tr>
       <tr>
         <td>Failed Tasks</td>
-        <td>{{stats-link value=model.failedTasks routeName="vertex.tasks" statsType="FAILED"}}</td>
+        <td><StatsLink @value={{model.failedTasks}} @routeName="vertex.tasks" @statsType="FAILED" /></td>
       </tr>
       <tr>
         <td>Killed Tasks</td>
-        <td>{{stats-link value=model.killedTasks routeName="vertex.tasks" statsType="KILLED"}}</td>
+        <td><StatsLink @value={{model.killedTasks}} @routeName="vertex.tasks" @statsType="KILLED" /></td>
       </tr>
       <tr>
         <td>Failed Task Attempts</td>
-        <td>{{stats-link value=model.failedTaskAttempts routeName="vertex.attempts" statsType="FAILED"}}</td>
+        <td><StatsLink @value={{model.failedTaskAttempts}} @routeName="vertex.attempts" @statsType="FAILED" /></td>
       </tr>
       <tr>
         <td>Killed Task Attempts</td>
-        <td>{{stats-link value=model.killedTaskAttempts routeName="vertex.attempts" statsType="KILLED"}}</td>
+        <td><StatsLink @value={{model.killedTaskAttempts}} @routeName="vertex.attempts" @statsType="KILLED" /></td>
       </tr>
       <tr>
         <td>First Task Start Time</td>
         <td>
-          {{date-formatter content=model.firstTaskStartTime}}
+          <DateFormatter @content={{model.firstTaskStartTime}} />
           {{#if firstTasksToStart}}
-            [{{em-table-linked-cell content=firstTasksToStart}}]
+            [<EmTableLinkedCell @content={{firstTasksToStart}} />]
           {{/if}}
         </td>
       </tr>
       <tr>
         <td>Last Task Finish Time</td>
         <td>
-          {{date-formatter content=model.lastTaskFinishTime}}
+          <DateFormatter @content={{model.lastTaskFinishTime}} />
           {{#if lastTasksToFinish}}
-            [{{em-table-linked-cell content=lastTasksToFinish}}]
+            [<EmTableLinkedCell @content={{lastTasksToFinish}} />]
           {{/if}}
         </td>
       </tr>
@@ -119,7 +119,7 @@
         <td>
           {{txt model.minDuration type="duration"}}
           {{#if shortestDurationTasks}}
-            [{{em-table-linked-cell content=shortestDurationTasks}}]
+            [<EmTableLinkedCell @content={{shortestDurationTasks}} />]
           {{/if}}
         </td>
       </tr>
@@ -128,7 +128,7 @@
         <td>
           {{txt model.maxDuration type="duration"}}
           {{#if longestDurationTasks}}
-            [{{em-table-linked-cell content=longestDurationTasks}}]
+            [<EmTableLinkedCell @content={{longestDurationTasks}} />]
           {{/if}}
         </td>
       </tr>
@@ -183,5 +183,5 @@
   {{/if}}
 
 {{else}}
-  {{partial "loading"}}
+  <Loading/>
 {{/if}}

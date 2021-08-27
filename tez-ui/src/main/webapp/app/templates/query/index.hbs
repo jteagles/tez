@@ -35,15 +35,15 @@
     </tr>
     <tr>
       <td>Status</td>
-      <td>{{em-table-status-cell content=model.status}}</td>
+      <td><EmTableStatusCell @content={{model.status}} /></td>
     </tr>
     <tr>
       <td>Start Time</td>
-      <td>{{date-formatter content=model.startTime}}</td>
+      <td><DateFormatter @content={{model.startTime}} /></td>
     </tr>
     <tr>
       <td>End Time</td>
-      <td>{{date-formatter content=model.endTime}}</td>
+      <td><DateFormatter @content={{model.endTime}} /></td>
     </tr>
     <tr>
       <td>Duration</td>
@@ -52,17 +52,17 @@
     <tr>
       <td>Application ID</td>
       <td>
-        {{#link-to 'app' model.dag.firstObject.appID class='ember-table-content'}}
+        <LinkTo @route="app" @model={{model.dag.firstObject.appID}} class="ember-table-content">
           {{model.dag.firstObject.appID}}
-        {{/link-to}}
+        </LinkTo>
       </td>
     </tr>
     <tr>
       <td>DAG ID</td>
       <td>
-        {{#link-to 'dag' model.dag.firstObject.entityID class='ember-table-content'}}
+        <LinkTo @route="dag" @model={{model.dag.firstObject.entityID}} class="ember-table-content">
           {{model.dag.firstObject.entityID}}
-        {{/link-to}}
+        </LinkTo>
       </td>
     </tr>
     <tr>
@@ -121,8 +121,8 @@
     </tbody>
   </table>
 
-  {{caller-info title="Query Text" type="Hive" info=model.queryText}}
+  <CallerInfo @title="Query Text" @type="Hive" @info={{model.queryText}} />
 
 {{else}}
-  {{partial "loading"}}
+  <Loading/>
 {{/if}}

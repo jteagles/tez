@@ -29,7 +29,7 @@
   <properties>
     <webappDir>src/main/webapp</webappDir>
 
-    <nodeVersion>v5.12.0</nodeVersion>
+    <nodeVersion>v12.22.5</nodeVersion>
     <nodeExecutable>${basedir}/src/main/webapp/node/node</nodeExecutable>
 
     <packageManagerScript>node/yarn/dist/bin/yarn.js</packageManagerScript>
@@ -374,7 +374,7 @@
             </goals>
             <configuration>
               <nodeVersion>${nodeVersion}</nodeVersion>
-              <yarnVersion>v0.21.3</yarnVersion>
+              <yarnVersion>v1.22.11</yarnVersion>
             </configuration>
           </execution>
           <execution>
@@ -387,6 +387,7 @@
               <arguments>install</arguments>
             </configuration>
           </execution>
+	  <!--
           <execution>
             <phase>generate-resources</phase>
             <id>bower install</id>
@@ -397,6 +398,7 @@
               <goal>bower</goal>
             </goals>
           </execution>
+	  -->
         </executions>
       </plugin>
 

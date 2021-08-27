@@ -19,25 +19,14 @@
 {{#if loaded}}
 
   {{#if model.perf}}
-    {{query-timeline perf=model.perf}}
+    <QueryTimeline @perf={{model.perf}} />
 
-    {{em-table
-    columns=columns
-    rows=rows
-
-    rowCount=rows.length
-    definition=definition
-
-    enablePagination=false
-
-    searchAction="searchChanged"
-    sortAction="sortChanged"
-    }}
+    <EmTable @columns={{columns}} @rows={{rows}} @rowCount={{rows.length}} @definition={{definition}} @enablePagination={{false}} @searchAction="searchChanged" @sortAction="sortChanged" />
   {{else}}
     <h2>Data not available to display Timeline!</h2>
     <h4>You may be using an older version of Hive.</h4>
   {{/if}}
 
 {{else}}
-  {{partial "loading"}}
+  <Loading/>
 {{/if}}

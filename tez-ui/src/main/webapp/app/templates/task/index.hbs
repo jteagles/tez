@@ -34,19 +34,19 @@
       </tr>
       <tr>
         <td>Status</td>
-        <td>{{em-table-status-cell content=model.status}}</td>
+        <td><EmTableStatusCell @content={{model.status}} /></td>
       </tr>
       <tr>
         <td>Progress</td>
-        <td>{{em-table-progress-cell content=model.progress}}</td>
+        <td><EmTableProgressCell @content={{model.progress}} /></td>
       </tr>
       <tr>
         <td>Start Time</td>
-        <td>{{date-formatter content=model.startTime}}</td>
+        <td><DateFormatter @content={{model.startTime}} /></td>
       </tr>
       <tr>
         <td>End Time</td>
-        <td>{{date-formatter content=model.endTime}}</td>
+        <td><DateFormatter @content={{model.endTime}} /></td>
       </tr>
       <tr>
         <td>Duration</td>
@@ -114,7 +114,7 @@
     <tbody>
       <tr>
         <td>Failed Task Attempts</td>
-        <td>{{stats-link value=model.failedTaskAttempts routeName="task.attempts" statsType="FAILED"}}</td>
+        <td><StatsLink @value={{model.failedTaskAttempts}} @routeName="task.attempts" @statsType="FAILED" /></td>
       </tr>
     </tbody>
   </table>
@@ -131,5 +131,5 @@
   {{/if}}
 
 {{else}}
-  {{partial "loading"}}
+  <Loading/>
 {{/if}}

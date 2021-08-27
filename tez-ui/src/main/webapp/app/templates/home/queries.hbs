@@ -17,25 +17,7 @@
 }}
 
 {{#if loaded}}
-  {{em-table
-  columns=visibleColumns
-  rows=model
-  rowCount=rowCount
-
-  classNames="all-queries-table"
-
-  headerComponentNames=headerComponentNames
-  footerComponentNames=footerComponentNames
-
-  definition=definition
-  enableSort=false
-
-  rowAction="rowCountChanged"
-
-  search="search"
-  loadPage="loadPage"
-  reload="reload"
-  }}
+  <EmTable @columns={{visibleColumns}} @rows={{model}} @rowCount={{rowCount}} @classNames="all-queries-table" @headerComponentNames={{headerComponentNames}} @footerComponentNames={{footerComponentNames}} @definition={{definition}} @enableSort={{false}} @rowCountChanged={{this.rowCountChanged}} @search="search" @loadPage="loadPage" />
 {{else}}
-  {{partial "loading"}}
+  <Loading/>
 {{/if}}

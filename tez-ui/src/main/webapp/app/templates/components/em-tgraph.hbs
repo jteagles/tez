@@ -93,8 +93,8 @@
   </div>
   <div class="button-panel">
     <i class="tgl-additionals {{if hideAdditionals 'hide-additionals'}}" {{action 'tglAdditionals'}} title="Toggle source/sink visibility"></i>
-    <i class="config jq-tooltip" {{action 'configure'}} title="Customize vertex tooltip"></i>
-    <i class="timeline no-display" {{action 'configure'}} title="Toggle Timeline"></i>
+    <i class="config jq-tooltip" {{action 'cogClicked'}} title="Customize vertex tooltip"></i>
+    <i class="timeline no-display" {{action 'cogClicked'}} title="Toggle Timeline"></i>
     <i class="seperator"></i>
     <i class="tgl-orientation {{if isHorizontal 'fa-rotate-270' 'fa-rotate-180'}}" {{action 'tglOrientation'}} title="Toggle orientation"></i>
     <i class="fit-graph" {{action 'fitGraph'}} title="Fit DAG to viewport"></i>

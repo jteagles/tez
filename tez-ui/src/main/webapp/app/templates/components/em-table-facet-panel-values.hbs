@@ -23,7 +23,7 @@
 </div>
 
 <ul class="value-list">
-  {{input type="text" class="filter-box" value=filterText placeholder="Filter"}}
+  <Input @type="text" class="filter-box" @value={{filterText}} placeholder="Filter" />
 
   {{#if showPagination}}
     <div class="pagination-controls">

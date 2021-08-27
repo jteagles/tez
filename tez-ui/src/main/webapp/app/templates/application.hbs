@@ -21,12 +21,12 @@
 
     <div class="header">
       <div class="lr-margin content">
-        {{#link-to 'application' class="logo"}}
+        <LinkTo @route="application" class="logo">
           <img src="assets/images/logo.png" width="70px"/>
-        {{/link-to}}
+        </LinkTo>
 
         <div class="breadcrumb-container">
-          {{em-breadcrumbs items=prefixedBreadcrumbs}}
+          <EmBreadcrumbs @items={{this.prefixedBreadcrumbs}} />
         </div>
 
         <div class="ui-info">
@@ -64,4 +64,7 @@
 
 {{outlet "modal"}}
 
-{{error-bar error=appError}}
+{{!--
+TODO
+<ErrorBar @error={{appError}} />
+--}}

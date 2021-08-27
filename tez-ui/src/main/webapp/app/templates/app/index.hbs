@@ -27,19 +27,19 @@
       <tbody>
       <tr>
         <td>Status</td>
-        <td>{{em-table-status-cell content=model.app.status}}</td>
+        <td><EmTableStatusCell @content={{model.app.status}} /></td>
       </tr>
       <tr>
         <td>Final Status</td>
-        <td>{{em-table-status-cell content=model.app.finalStatus}}</td>
+        <td><EmTableStatusCell @content={{model.app.finalStatus}} /></td>
       </tr>
       <tr>
         <td>Start Time</td>
-        <td>{{date-formatter content=model.app.startTime}}</td>
+        <td><DateFormatter @content={{model.app.startTime}} /></td>
       </tr>
       <tr>
         <td>End Time</td>
-        <td>{{date-formatter content=model.app.endTime}}</td>
+        <td><DateFormatter @content={{model.app.endTime}} /></td>
       </tr>
       <tr>
         <td>Duration</td>
@@ -144,5 +144,5 @@
   {{/unless}}
 
 {{else}}
-  {{partial "loading"}}
+  <Loading/>
 {{/if}}

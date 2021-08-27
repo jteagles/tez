@@ -29,13 +29,7 @@
     </span>
   {{/if}}
 
-  {{input
-    type="text"
-    class="form-control"
-    placeholder="Search..."
-    enter="search"
-    value=text
-  }}
+  <Input @type="text" class="form-control" placeholder="Search..." @enter="search" @value={{text}} />
 
   <span class="input-group-btn">
     <button class="btn btn-default {{if dataProcessor.isSearching 'animated-stripes'}}" type="button" {{action "search"}}>

@@ -19,28 +19,13 @@
 <div class="form-group">
   <div class="search-element dag-name">
     <label for="pwd">DAG Name:</label>
-    {{input value=dagName
-      type="text"
-      class="form-control input-sm"
-      placeholder="Search..."
-      enter="search"
-    }}
+    <Input @value={{dagName}} @type="text" class="form-control input-sm" placeholder="Search..." @enter={{this.dagSearch}} />
   </div><div class="search-element">
     <label for="pwd">ID:</label>
-    {{input value=dagID
-      type="text"
-      class="form-control input-sm"
-      placeholder="Search..."
-      enter="search"
-    }}
+    <Input @value={{dagID}} @type="text" class="form-control input-sm" placeholder="Search..." @enter={{this.dagSearch}} />
   </div><div class="search-element">
     <label for="pwd">Submitter:</label>
-    {{input value=submitter
-      type="text"
-      class="form-control input-sm"
-      placeholder="Search..."
-      enter="search"
-    }}
+    <Input @value={{submitter}} @type="text" class="form-control input-sm" placeholder="Search..." @enter={{this.dagSearch}} />
   </div><div class="search-element">
     <label for="pwd">Status:</label>
     <select value={{status}}
@@ -57,30 +42,15 @@
     </select>
   </div><div class="search-element">
     <label for="pwd">Application ID:</label>
-    {{input value=appID
-      type="text"
-      class="form-control input-sm"
-      placeholder="Search..."
-      enter="search"
-    }}
+    <Input @value={{appID}} @type="text" class="form-control input-sm" placeholder="Search..." @enter={{this.dagSearch}} />
   </div><div class="search-element">
     <label for="pwd">Queue:</label>
-    {{input value=queue
-    type="text"
-    class="form-control input-sm"
-    placeholder="Search..."
-    enter="search"
-    }}
+    <Input @value={{queue}} @type="text" class="form-control input-sm" placeholder="Search..." @enter={{this.dagSearch}} />
   </div><div class="search-element">
     <label for="pwd">Caller ID:</label>
-    {{input value=callerID
-      type="text"
-      class="form-control input-sm"
-      placeholder="Search..."
-      enter="search"
-    }}
+    <Input @value={{callerID}} @type="text" class="form-control input-sm" placeholder="Search..." @enter={{this.dagSearch}} />
   </div>
 </div>
-<button type="button" class="btn btn-success" {{action 'search'}}>
+<button type="button" class="btn btn-success" {{action 'dagSearch'}}>
   <i class="fa fa-search" aria-hidden="true"></i>
 </button>

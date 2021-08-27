@@ -19,21 +19,21 @@
 <div class="selection-list">
   <div class="filter-option highlight">
     <div class="form-group">
-      {{input class="form-control" placeholder="Filter..." value=searchText}}
+      <Input class="form-control" placeholder="Filter..." @value={{this.searchText}} />
     </div>
     <div class="select-all">
       <input type="checkbox"
              checked={{selectAll}}
-             onclick={{action "selectAll" value="target.checked"}} />
+             onclick={{action "selectAllAction" value="target.checked"}} />
       &nbsp;Select All
     </div>
   </div>
   <div class="options">
     {{#if filteredOptions.length}}
-      {{#each filteredOptions as |option|}}
-        <div class="select-option {{option.css}}">
-          {{input type="checkbox" classNames='checkbox' checked=option.selected}}
-          {{option.displayText}}
+      {{#each this.filteredOptions as |filteredOption|}}
+        <div class="select-option {{filteredOption.css}}">
+          <Input @type="checkbox" @classNames="checkbox" @checked={{filteredOption.selected}} />
+          {{filteredOption.displayText}}
         </div>
       {{/each}}
     {{else}}
@@ -46,5 +46,5 @@
     {{{content.message}}}
   </span>
   <button type="button" class="btn btn-primary" {{action "ok"}} data-dismiss="modal" aria-label="Close">Ok</button>
-  <button type="button" class="btn" data-dismiss="modal" aria-label="Close">Cancel</button>
+  <button type="button" class="btn" aria-label="Close" {{action "closeModal"}}>Cancel</button>
 </div>

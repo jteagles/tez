@@ -18,13 +18,13 @@
 
 {{#if value}}
   {{#if searchText}}
-    {{#link-to routeName (query-params searchText=searchText)}}
+    <LinkTo @route={{routeName}} @query={{hash searchText=searchText}}>
       {{txt value type="number"}}
-    {{/link-to}}
+    </LinkTo>
   {{else}}
-    {{#link-to routeName}}
+    <LinkTo @route={{routeName}}>
       {{txt value type="number"}}
-    {{/link-to}}
+    </LinkTo>
   {{/if}}
 {{else}}
   {{txt value type="number"}}

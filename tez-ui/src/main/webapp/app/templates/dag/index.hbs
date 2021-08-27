@@ -26,15 +26,17 @@
     <tbody>
       <tr>
         <td colspan="2">
-          {{bs-button icon="fa fa-download" title="Download data" defaultText="Download data" type="info" action="downloadDagJson"}}
+        <button type="button" class="btn btn-info" {{action "downloadDag"}}>
+          <i class='fa fa-download'></i> Download data
+        </button>
         </td>
       </tr>
       <tr>
         <td>Application ID</td>
         <td>
-          {{#link-to 'app' model.appID class='ember-table-content'}}
+          <LinkTo @route="app" @model={{model.appID}} class="ember-table-content">
             {{model.appID}}
-          {{/link-to}}
+          </LinkTo>
         </td>
       </tr>
       <tr>
@@ -51,19 +53,19 @@
       </tr>
       <tr>
         <td>Status</td>
-        <td>{{em-table-status-cell content=model.finalStatus}}</td>
+        <td><EmTableStatusCell @content={{model.finalStatus}} /></td>
       </tr>
       <tr>
         <td>Progress</td>
-        <td>{{em-table-progress-cell content=model.progress}}</td>
+        <td><EmTableProgressCell @content={{model.progress}} /></td>
       </tr>
       <tr>
         <td>Start Time</td>
-        <td>{{date-formatter content=model.startTime}}</td>
+        <td><DateFormatter @content={{model.startTime}} /></td>
       </tr>
       <tr>
         <td>End Time</td>
-        <td>{{date-formatter content=model.endTime}}</td>
+        <td><DateFormatter @content={{model.endTime}} /></td>
       </tr>
       <tr>
         <td>Duration</td>
@@ -76,13 +78,13 @@
       <tr>
         <td>Logs</td>
         <td>
-          {{em-table-linked-cell content=model.containerLogs definition=logLinkDefinition}}
+          <EmTableLinkedCell @content={{model.containerLogs}} @definition={{logLinkDefinition}} />
         </td>
       </tr>
     </tbody>
   </table>
 {{else}}
-  {{partial "loading"}}
+  <Loading/>
 {{/if}}
 
 <!--
@@ -97,7 +99,7 @@
 
 {{#if loaded}}
   {{#if model.callerDescription}}
-    {{caller-info type=model.callerContext info=model.callerDescription}}
+    <CallerInfo @type={{model.callerContext}} @info={{model.callerDescription}} />
   {{/if}}
 
   {{#if model.diagnostics}}

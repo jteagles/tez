@@ -169,21 +169,10 @@
       </table>
 
       <!-- Configurations display -->
-      {{em-table
-        columns=columns
-        rows=configs
-
-        rowCount=configs.length
-        definition=definition
-
-        enablePagination=false
-
-        searchAction="searchChanged"
-        sortAction="sortChanged"
-      }}
+      <EmTable @columns={{columns}} @rows={{configs}} @rowCount={{configs.length}} @definition={{definition}} @enablePagination={{false}} @searchAction="searchChanged" @sortAction="sortChanged" />
     {{/if}}
   </div>
 
 {{else}}
-  {{partial "loading"}}
+  <Loading/>
 {{/if}}
